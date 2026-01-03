@@ -32,12 +32,13 @@ aws cloudformation validate-template --template-body file://template.yaml
 ```
 aws cloudformation create-stack \
   --stack-name myEC2EIP \
-  --template-body file://template.yaml 
+  --template-body file://template.yaml \
+  --parameters ParameterKey=SecurityGroupDescription,ParameterValue="My server security group"
 ```
-OR
 ```
-aws cloudformation create-stack --stack-name myEC2EIP --template-body file://template.yaml
+aws cloudformation describe-stacks --stack-name myEC2EIP --query 'Stacks[0].StackStatus'
 ```
+
 # Delete Stack
 ```
 aws cloudformation delete-stack \
