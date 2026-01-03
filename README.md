@@ -38,7 +38,13 @@ aws cloudformation create-stack \
 ```
 aws cloudformation describe-stacks --stack-name myEC2EIP --query 'Stacks[0].StackStatus'
 ```
-
+# Update Stack 
+```
+aws cloudformation update-stack \
+  --stack-name myEC2EIP \
+  --template-body file://template.yaml
+```
+  
 # Delete Stack
 ```
 aws cloudformation delete-stack \
