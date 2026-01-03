@@ -13,8 +13,7 @@ Resources:
       ImageId: ami-068c0051b15cdb816      
       InstanceType: t3.medium
       SecurityGroups:
-        - !Ref SSHSecurityGroup
-        - !Ref ServerSecurityGroup
+        - !Ref MySecurityGroup
 
   # an elastic IP for our instance
   MyEIP:
